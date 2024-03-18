@@ -74,7 +74,7 @@ class _LoginState extends State<Login> {
                         ),
                         TextField(
                           controller: emailController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: 'Masukkan Email',
                           ),
                           onChanged: (value) {
@@ -82,7 +82,7 @@ class _LoginState extends State<Login> {
                           },
                         ),
                         if (!isEmailValid)
-                          Text(
+                          const Text(
                             "Email harus berakhir dengan @gmail.com",
                             style: TextStyle(color: Colors.red),
                           ),
