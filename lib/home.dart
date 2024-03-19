@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbb_wespend/navbar/homePage.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -8,18 +9,46 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _current = 0;
+  final _pgc = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Home"),
-            ],
-          ),
+        child: PageView(
+          controller: _pgc,
+          onPageChanged: (i) {
+            setState(() {
+              _current = i;
+            });
+          },
+          children: const [
+            HomePage(),
+            Text('laporan'),
+            Text('plust'),
+            Text('limit'),
+          ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _current,
+        onTap: (index) {
+          _pgc.jumpToPage(index);
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.report),
+            label: 'laporan',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
       ),
     );
   }
