@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pbb_wespend/login.dart';
+import 'package:pbb_wespend/intro.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'MultiSellerSquare',
-      home: Login(),
+      home: Intro(),
       debugShowCheckedModeBanner: false,
     );
   }
