@@ -22,7 +22,7 @@ class _IntroState extends State<Intro> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "WeSPend",
+                      "WSPend",
                       style: TextStyle(
                         fontFamily: "VampiroOne",
                         color: Colors.black,

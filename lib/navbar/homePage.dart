@@ -20,6 +20,8 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       body: SafeArea(
+          child: Container(
+        color: Colors.yellow[600],
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -39,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                 width: double.infinity,
                 height: 150,
                 decoration: BoxDecoration(
-                  color: Colors.grey, // Warna kotak
+                  color: Color.fromARGB(143, 119, 119, 119), // Warna kotak
                   borderRadius:
                       BorderRadius.circular(10), // Melengkungkan sudut kotak
                 ),
@@ -101,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                 width: double.infinity,
                 height: 150,
                 decoration: BoxDecoration(
-                  color: Colors.grey, // Warna kotak
+                  color: Color.fromARGB(143, 119, 119, 119), // Warna kotak
                   borderRadius:
                       BorderRadius.circular(10), // Melengkungkan sudut kotak
                 ),
@@ -145,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                 width: double.infinity,
                 height: 200,
                 decoration: BoxDecoration(
-                  color: Colors.grey,
+                  color: Color.fromARGB(143, 119, 119, 119),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Padding(
@@ -193,7 +195,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-      ),
+      )),
     );
   }
 }
