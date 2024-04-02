@@ -21,6 +21,7 @@ class _LaporanPageState extends State<LaporanPage> {
         backgroundColor: Colors.yellow[600],
         elevation: 0,
         centerTitle: true,
+        leading: Container(),
         title: const Text(
           'Laporan',
           style: TextStyle(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pbb_wespend/Add/addExpends.dart';
+import 'package:pbb_wespend/Add/addIncome.dart';
 import 'package:pbb_wespend/navbar/homePage.dart';
 import 'package:pbb_wespend/navbar/laporan.dart';
 import 'package:pbb_wespend/navbar/limitPage.dart';
@@ -14,26 +16,55 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _current = 0;
   final _pgc = PageController(initialPage: 0);
+  final List<Widget> _pages = const [
+    HomePage(),
+    LaporanPage(),
+    AddIncomePage(),
+    LimitPage(),
+    ProfilePage(),
+  ];
 
   bool _isAddExpanded = false;
+
+  void _goToPage(int page) {
+    setState(() {
+      _current = page;
+      _isAddExpanded = false;
+    });
+    _pgc.jumpToPage(page);
+  }
+
+  void _goToAddIncomePage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AddIncomePage()),
+    );
+  }
+
+  void _goToExpandedPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AddExpendesPage()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: PageView(
-          controller: _pgc,
-          onPageChanged: (i) {
-            setState(() {
-              _current = i;
-            });
-          },
-          children: const [
-            HomePage(),
-            LaporanPage(),
-            LimitPage(),
-            ProfilePage()
-          ],
+        child: Container(
+          color: Colors.yellow[600],
+          child: PageView(
+            controller: _pgc,
+            onPageChanged: (i) {
+              setState(() {
+                _current = i;
+                _isAddExpanded =
+                    false; // Hide the expanded buttons when changing pages
+              });
+            },
+            children: _pages,
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -44,14 +75,9 @@ class _HomeState extends State<Home> {
               _isAddExpanded = !_isAddExpanded;
             });
           } else {
-            setState(() {
-              _current = index;
-              _isAddExpanded = false;
-            });
-            _pgc.jumpToPage(index);
+            _goToPage(index);
           }
         },
-        backgroundColor: Colors.yellow[600],
         selectedItemColor: Colors.yellow,
         unselectedItemColor: Colors.black,
         unselectedLabelStyle: const TextStyle(color: Colors.black),
@@ -85,18 +111,14 @@ class _HomeState extends State<Home> {
               children: [
                 FloatingActionButton(
                   onPressed: () {
-                    // Aksi saat tombol "Add" di popup ditekan
-                    print('Add Button Pressed');
+                    _goToAddIncomePage();
                   },
                   heroTag: null,
                   child: Icon(Icons.add),
                 ),
                 const SizedBox(height: 16),
                 FloatingActionButton(
-                  onPressed: () {
-                    // Aksi saat tombol "Expands" di popup ditekan
-                    print('Expands Button Pressed');
-                  },
+                  onPressed: _goToExpandedPage,
                   heroTag: null,
                   child: Icon(Icons.expand),
                 ),
