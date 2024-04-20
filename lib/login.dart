@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pbb_wespend/regis.dart';
 
 class Login extends StatefulWidget {
@@ -65,7 +67,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const SizedBox(height: 30),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: EdgeInsets.only(left: 20),
@@ -74,7 +76,7 @@ class _LoginState extends State<Login> {
                       children: [
                         Text(
                           "Ayo mulai bijak dengan keuanganmu di aplikasi WSpend!",
-                          style: TextStyle(fontSize: 20, fontFamily: "Roboto"),
+                          style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                         ),
                         // Tambahkan widget atau teks di sini
                       ],
@@ -92,9 +94,9 @@ class _LoginState extends State<Login> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Email",
-                            style: TextStyle(fontSize: 20),
+                            style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                           ),
                           TextField(
                             controller: emailController,
@@ -106,9 +108,9 @@ class _LoginState extends State<Login> {
                             },
                           ),
                           if (!isEmailValid)
-                            const Text(
+                            Text(
                               "Email harus berakhir dengan @gmail.com",
-                              style: TextStyle(color: Colors.red),
+                              style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20, color:Colors.red)),
                             ),
                         ],
                       ),
@@ -120,9 +122,9 @@ class _LoginState extends State<Login> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Password",
-                            style: TextStyle(fontSize: 20),
+                            style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                           ),
                           TextField(
                             controller: passwordController,
@@ -147,9 +149,9 @@ class _LoginState extends State<Login> {
                 SizedBox(height: 50),
                 ElevatedButton(
                   onPressed: submitForm,
-                  child: const Text(
+                  child: Text(
                     "Masuk",
-                    style: TextStyle(fontSize: 20),
+                    style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                   ),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
@@ -163,9 +165,9 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const SizedBox(height: 50),
-                const Text(
+                Text(
                   "Atau",
-                  style: TextStyle(fontSize: 22),
+                  style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 22)),
                 ),
                 ElevatedButton(
                   onPressed: goToRegisterPage, // Navigasi ke halaman Regis
@@ -185,7 +187,7 @@ class _LoginState extends State<Login> {
                       SizedBox(width: 8),
                       Text(
                         'Register',
-                        style: TextStyle(fontSize: 20),
+                        style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                       ),
                     ],
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pbb_wespend/home.dart';
 
 class Regis extends StatefulWidget {
@@ -85,7 +86,7 @@ class _RegisState extends State<Regis> {
                   ),
                 ),
                 const SizedBox(height: 30),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: EdgeInsets.only(left: 20),
@@ -94,7 +95,7 @@ class _RegisState extends State<Regis> {
                       children: [
                         Text(
                           "Ayo mulai bijak dengan keuanganmu di aplikasi WSpend!",
-                          style: TextStyle(fontSize: 20, fontFamily: "Roboto"),
+                          style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                         ),
                       ],
                     ),
@@ -111,9 +112,9 @@ class _RegisState extends State<Regis> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Nama",
-                            style: TextStyle(fontSize: 20),
+                            style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                           ),
                           TextField(
                             decoration: const InputDecoration(
@@ -130,9 +131,9 @@ class _RegisState extends State<Regis> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "No HP",
-                            style: TextStyle(fontSize: 20),
+                            style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                           ),
                           TextField(
                             decoration: const InputDecoration(
@@ -149,9 +150,9 @@ class _RegisState extends State<Regis> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Email",
-                            style: TextStyle(fontSize: 20),
+                            style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                           ),
                           TextField(
                             controller: emailController,
@@ -163,9 +164,9 @@ class _RegisState extends State<Regis> {
                             },
                           ),
                           if (!isEmailValid)
-                            const Text(
+                            Text(
                               "Email harus berakhir dengan @gmail.com",
-                              style: TextStyle(color: Colors.red),
+                              style: GoogleFonts.roboto(textStyle: TextStyle(color: Colors.red)),
                             ),
                         ],
                       ),
@@ -177,9 +178,9 @@ class _RegisState extends State<Regis> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Password",
-                            style: TextStyle(fontSize: 20),
+                            style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                           ),
                           TextField(
                             controller: passwordController,
@@ -206,9 +207,9 @@ class _RegisState extends State<Regis> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Konfirmasi Password",
-                            style: TextStyle(fontSize: 20),
+                            style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                           ),
                           TextField(
                             controller: confirmPasswordController,
@@ -239,9 +240,9 @@ class _RegisState extends State<Regis> {
                 SizedBox(height: 50),
                 ElevatedButton(
                   onPressed: submitForm,
-                  child: const Text(
+                  child: Text(
                     "Buat Akun",
-                    style: TextStyle(fontSize: 20),
+                    style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 20)),
                   ),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,

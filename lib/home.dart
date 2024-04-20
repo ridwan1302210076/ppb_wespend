@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          color: Colors.yellow[600],
+          color: const Color.fromARGB(255, 131, 108, 6),
           child: PageView(
             controller: _pgc,
             onPageChanged: (i) {
@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
             _goToPage(index);
           }
         },
-        selectedItemColor: Colors.yellow,
+        selectedItemColor: const Color.fromARGB(255, 165, 149, 8),
         unselectedItemColor: Colors.black,
         unselectedLabelStyle: const TextStyle(color: Colors.black),
         iconSize: 30,
