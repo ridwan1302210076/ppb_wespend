@@ -178,7 +178,7 @@ class _LoginState extends State<Login> {
                         const Size(double.infinity, 50), // Tombol selebar layar
                     shape: RoundedRectangleBorder(
                       borderRadius:
-                          BorderRadius.circular(30), // Sudut melengkung
+                          BorderRadius.circular(30), // Sudut melengku
                     ),
                   ),
                   child: Row(
